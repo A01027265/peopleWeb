@@ -1,0 +1,43 @@
+doctype html
+html
+    head
+        title= title
+
+        link(rel='stylesheet' href='/stylesheets/style.css')
+        link(rel="preconnect" href="https://fonts.gstatic.com")
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300" rel="stylesheet")
+
+    
+    body
+        - const tmpImg = 'https://res.cloudinary.com/dtbudl0yx/image/fetch/w_2000,f_auto,q_auto,c_fit/https://adamtheautomator.com/content/images/size/w2000/2019/10/user-1633249_1280.png';
+
+        #body
+            aside
+                h1#logo People
+                a(class=`${url.endsWith('/all') ? 'page page--selected' : 'page'}` href='/')
+                    <svg class="page__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M29.7 15.8l-13-13c-0.4-0.4-1-0.4-1.4 0l-13 13c-0.4 0.4-0.4 1 0 1.4s1 0.4 1.4 0L16 4.9l8 8C24 13 24 13 24 13v15H8V18c0-0.6-0.4-1-1-1s-1 0.4-1 1v11c0 0.6 0.4 1 1 1h18c0.6 0 1-0.4 1-1V14.9l2.3 2.3C28.5 17.4 28.7 17.5 29 17.5s0.5-0.1 0.7-0.3C30.1 16.8 30.1 16.2 29.7 15.8z"/></svg>
+                    h2.page__title All
+                a(class=`${url.endsWith('/men') ? 'page page--selected' : 'page'}` href='/men')
+                    <svg class="page__icon page__icon--stroke" xmlns="http://www.w3.org/2000/svg" viewBox="-3 -6 41 41"><defs><style>  .cls-1{fill:none;stroke:#000;stroke-linejoin:round;stroke-width:2px;}</style></defs><g data-name="216-Male"><polyline class="cls-1" points="16 1 31 1 31 14"/><circle class="cls-1" cx="11" cy="21" r="10"/><line class="cls-1" x1="31" x2="18" y1="1" y2="14"/></g></svg>
+                    h2.page__title Men
+                a(class=`${url.endsWith('/women') ? 'page page--selected' : 'page'}` href='/women')
+                    <svg class="page__icon page__icon--stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>  .cls-1{fill:none;stroke:#000;stroke-linejoin:round;stroke-width:2px;}</style></defs><g data-name="217-Female"><circle class="cls-1" cx="16" cy="11" r="10"/><line class="cls-1" x1="16" x2="16" y1="21" y2="32"/><line class="cls-1" x1="11" x2="21" y1="27" y2="27"/></g></svg>
+                    h2.page__title Women
+                .page
+                    <svg class="page__icon" xmlns="http://www.w3.org/2000/svg" viewBox="30 0 512 512"><g data-name="1"><path d="M157 331a82 82 0 1 1 58-24A82 82 0 0 1 157 331Zm0-134a52 52 0 1 0 37 15A52 52 0 0 0 157 197Z"/><path d="M363 213A82 82 0 1 1 421 72h0A82 82 0 0 1 363 213Zm0-135a52 52 0 1 0 37 15A52 52 0 0 0 363 78Z"/><path d="M363 450a82 82 0 1 1 82-82A82 82 0 0 1 363 450Zm0-135a52 52 0 1 0 52 52A52 52 0 0 0 363 315Z"/><path d="M215 230a15 15 0 0 1-8-28l89-51a15 15 0 0 1 15 26l-89 51A15 15 0 0 1 215 230Z"/><path d="M305 349a15 15 0 0 1-7-2l-89-51a15 15 0 0 1 15-26l89 51a15 15 0 0 1-7 28Z"/></g></svg>
+                    h2.page__title Groups
+                .page
+                    <svg class="page__icon page__icon--stroke" xmlns="http://www.w3.org/2000/svg" viewBox="2 -5 52 52"><style>.a{fill:none;stroke-width:2;stroke:#000;}</style><rect height="50" width="50" fill="none"/><circle cx="39" cy="11" r="3" class="a"/><path d="M47 5.5C47 4.1 45.9 3 44.5 3c-0.2 0-14.9 0-14.9 0 -1.3 0-2.6-0.1-3.3 0.7L3.6 26.4c-0.7 0.7-0.7 1.9 0 2.7l17.4 17.4c0.7 0.7 1.9 0.7 2.7 0L46.3 23.7c0.7-0.7 0.7-2 0.7-3.3C47 20.4 47 5.7 47 5.5z" class="a"/></svg>
+                    h2.page__title Tags
+                .page
+                    <svg class="page__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><g data-name="1"><path d="M370 426a15 15 0 0 1-7-2L257 368 151 424A15 15 0 0 1 129 408l20-118-86-84a15 15 0 0 1 8-26l119-17L244 55a15 15 0 0 1 27 0l53 108 119 17a15 15 0 0 1 8 26l-86 84L385 408a15 15 0 0 1-15 18ZM106 206l70 68A15 15 0 0 1 180 287l-16 96L250 338a15 15 0 0 1 14 0l86 45L334 287a15 15 0 0 1 4-13L408 206l-97-14a15 15 0 0 1-11-8L257 96l-43 87a15 15 0 0 1-11 8Z"/></g></svg>
+                    h2.page__title Events
+                .page
+                    <svg class="page__icon" xmlns="http://www.w3.org/2000/svg" viewBox="-1 0 33 33"><defs><style>  .cls-1{fill:none;}</style></defs><g data-name="Layer 2"><path d="M24 29H8a5 5 0 0 1-5-5V10A5 5 0 0 1 8 5H24a5 5 0 0 1 5 5V24A5 5 0 0 1 24 29ZM8 7a3 3 0 0 0-3 3V24a3 3 0 0 0 3 3H24a3 3 0 0 0 3-3V10a3 3 0 0 0-3-3Z"/><path d="M24 25H20a1 1 0 0 1-1-1V20a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4A1 1 0 0 1 24 25Zm-3-2h2V21H21Z"/><path d="M28 13H4a1 1 0 0 1 0-2H28a1 1 0 0 1 0 2Z"/><path d="M11 9a1 1 0 0 1-1-1V4a1 1 0 0 1 2 0V8A1 1 0 0 1 11 9Z"/><path d="M21 9a1 1 0 0 1-1-1V4a1 1 0 0 1 2 0V8A1 1 0 0 1 21 9Z"/></g></svg>
+                    h2.page__title Calendar
+                .page
+                    <svg class="page__icon" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -2 34 34" width="32"><g data-name="2"><path d="M28 25V10a1 1 0 0 0-1-1H23a1 1 0 0 0-1 1V25H20V6a1 1 0 0 0-1-1H15a1 1 0 0 0-1 1V25H12V15a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1V25H4V5H2V26a1 1 0 0 0 1 1H30V25ZM24 11h2V25H24ZM16 7h2V25H16ZM8 16h2v9H8Z"/></g></svg>
+                    h2.page__title Analytics
+
+            main
+                block content

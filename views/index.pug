@@ -1,0 +1,53 @@
+extends layout
+
+block content
+
+    form.search(action='' method='post')
+        input.search__input(name='name' placeholder='Name...' autocomplete='off')
+        input.search__input(name='group' placeholder='Group...' autocomplete='off')
+        input.search__input(name='tags' placeholder='Tags...' autocomplete='off')
+        input.search__input(name='event' placeholder='Event...' autocomplete='off')
+        select.search__select(name='gender')
+            option(value='-1' selected) Gender
+            option(value='male') Male
+            option(value='female') Female
+        select.search__select(name='points')
+            option(value='0' selected) Sort by Points
+            option(value='-1') Greatest-Least
+            option(value='1') Least-Greatest
+
+    .slider
+        .card-pages
+            - for(let i = 0; i < pages.length; i++)
+                - const page = pages[i];
+                - const divClass = i === 0 ? 'cards first' : 'cards'
+                div(class=divClass)
+                    each person in page
+                        .card
+                            .card__image
+                                if person.image === ''
+                                    img(src=tmpImg alt='Person')
+                                else
+                                    img(src=`http://res.cloudinary.com/duezou4td/image/upload/${person.image}.jpg` alt=`${person.first_name} ${person.last_name} image`)
+                                .card__points
+                                    p= person.acquaintance_level
+                            .card__text
+                                p.card__name= `${person.first_name} ${person.last_name} (${person.age})`
+                                p.card__place= person.association
+        .navigation
+            - for(let i = 0; i < pages.length; i++)
+                label(for=`radio${i}` class='manual-btn')
+    
+    script.
+        document.addEventListener('DOMContentLoaded', () => {
+            const radioBtns = document.querySelectorAll('.manual-btn');
+            const firstPage = document.querySelector('.first');
+            
+            radioBtns.forEach(button => {
+                button.addEventListener('click', () => {
+                    const clickedBtnNumber = button.htmlFor.substring(5);
+                    const moveLeftBy = clickedBtnNumber * -20;
+                    firstPage.style.cssText = `margin-left: ${moveLeftBy}%;`;
+                });
+            });
+        });
